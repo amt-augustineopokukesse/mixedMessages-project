@@ -1,4 +1,4 @@
-// Create create Inspiration Robot object
+// Create Inspiration Robot object
 const inspirationBot = {
     // create message pool property
     _msgPool: {
@@ -28,7 +28,7 @@ const inspirationBot = {
     get courses() {
         return {
           greetings: this.greetings,
-          mains: this.main,
+          mains: this.mains,
           endings: this.endings
         }
     },
@@ -46,7 +46,7 @@ const inspirationBot = {
     generateRandomMessage() {
         const greeting = this.getRandomMessage('greetings');// get greeting
         const main = this.getRandomMessage('mains');// get main message
-        const ending = this.getRandomMessage('endings');// get endin
+        const ending = this.getRandomMessage('endings');// get ending
     // Return combined message pieces
         return `${greeting}, ${main}. ${ending}`
     }     

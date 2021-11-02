@@ -2,49 +2,55 @@
 const inspirationBot = {
     // create message pool property
     _msgPool: {
-      greeting: [],
-      body: [],
-      ending: [],
+      greetings: [],
+      mains: [],
+      endings: [],
     },
     // Creating getter and setter methods for the message pool
-    get greeting() {
-      return this._msgPool.greeting;
+    get greetings() {
+      return this._msgPool.greetings;
     },
-    set greeting(greeting) {
-        this._msgPool.greeting = greeting;
+    set greetings(greetings) {
+        this._msgPool.greetings = greetings;
     },
-    get body() {
-      return this._msgPool.body;
+    get mains() {
+      return this._msgPool.mains;
     },
-    set body(body) {
-        this._msgPool.body = body;
+    set mains(mains) {
+        this._msgPool.mains = mains;
     },
-    get ending() {
-      return this._msgPool.ending;
+    get endings() {
+      return this._msgPool.endings;
     },
-    set ending(ending) {
-        this._msgPool.ending = ending;
+    set endings(endings) {
+        this._msgPool.endings = endings;
     },
     get courses() {
         return {
-          appetizers: this.appetizers,
-          mains: this.mains,
-          desserts: this.desserts
+          greetings: this.greetings,
+          mains: this.main,
+          endings: this.endings
         }
     },
     // fill inspiration bot with message pieces 
     fillBot(msgPart, string) {
     this._msgPool[msgPart].push(string);
     },
-    // Create function to generate random message
+    // Create function to generate random message piece
     getRandomMessage(msgPart) {
         const msgArray = this._msgPool[msgPart];
         const randNum = Math.floor(Math.random() * msgArray.length);
         return msgArray[randNum];
     },
-    // Select random message pieces
-
-}
+    // Generate random message
+    generateRandomMessage() {
+        const greeting = this.getRandomMessage('greetings');// get appetizer dish
+        const main = this.getRandomMessage('mains');// get main dish
+        const ending = this.getRandomMessage('endings');// get dessert dish
+    // Return combined message pieces
+        return `${greeting}, ${main}. ${ending}`
+    }     
+};
 
 //test
 //inspirationBot.fillBot('greeting','Hello');

@@ -32,10 +32,18 @@ const inspirationBot = {
           desserts: this.desserts
         }
     },
-    // fill inspiration bot
+    // fill inspiration bot with message pieces 
     fillBot(msgPart, string) {
     this._msgPool[msgPart].push(string);
-    },     
+    },
+    // Create function to generate random message
+    getRandomMessage(msgPart) {
+        const msgArray = this._msgPool[msgPart];
+        const randNum = Math.floor(Math.random() * msgArray.length);
+        return msgArray[randNum];
+    },
+    // Select random message pieces
+
 }
 
 //test

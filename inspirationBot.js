@@ -44,14 +44,33 @@ const inspirationBot = {
     },
     // Generate random message
     generateRandomMessage() {
-        const greeting = this.getRandomMessage('greetings');// get appetizer dish
-        const main = this.getRandomMessage('mains');// get main dish
-        const ending = this.getRandomMessage('endings');// get dessert dish
+        const greeting = this.getRandomMessage('greetings');// get greeting
+        const main = this.getRandomMessage('mains');// get main message
+        const ending = this.getRandomMessage('endings');// get endin
     // Return combined message pieces
         return `${greeting}, ${main}. ${ending}`
     }     
 };
 
-//test
-//inspirationBot.fillBot('greeting','Hello');
-//console.log(inspirationBot._msgPool.greeting);
+// Fill object arrays
+//Greetings
+inspirationBot.fillBot('greetings','Hello friend');
+inspirationBot.fillBot('greetings','Hi there');
+inspirationBot.fillBot('greetings','Dear friend');
+inspirationBot.fillBot('greetings','Hola amigo');
+inspirationBot.fillBot('greetings','Ciao amico');
+// Main messages
+inspirationBot.fillBot('mains','everything will be okay');
+inspirationBot.fillBot('mains','life is tough, but so are you');
+inspirationBot.fillBot('mains','you are doing great');
+inspirationBot.fillBot('mains','the struggle you\'re in today, is developing the strength you need for tomorrow');
+inspirationBot.fillBot('mains','you have to fight through some bad days to earn the best days of your life');
+// Ending messages
+inspirationBot.fillBot('endings','Just relax');
+inspirationBot.fillBot('endings','Hang in there');
+inspirationBot.fillBot('endings','Keep pushing');
+inspirationBot.fillBot('endings','Don\'t give up');
+inspirationBot.fillBot('endings','Keep fighting');
+// Generate message
+const message = inspirationBot.generateRandomMessage();
+console.log(message);

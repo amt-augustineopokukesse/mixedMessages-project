@@ -31,5 +31,13 @@ const inspirationBot = {
           mains: this.mains,
           desserts: this.desserts
         }
-    }    
-}    
+    },
+    // fill inspiration bot
+    fillBot(msgPart, string) {
+    this._msgPool[msgPart].push(string);
+    },     
+}
+
+//test
+//inspirationBot.fillBot('greeting','Hello');
+//console.log(inspirationBot._msgPool.greeting);
